@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatasetBuilder", "DatasetBuilder\DatasetBuilder.csproj", "{3DEE5273-67FA-418B-A2AE-B4B77F63CCF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{107029AE-A51C-4D89-91AF-1781E7EACF5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3DEE5273-67FA-418B-A2AE-B4B77F63CCF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DEE5273-67FA-418B-A2AE-B4B77F63CCF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DEE5273-67FA-418B-A2AE-B4B77F63CCF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{107029AE-A51C-4D89-91AF-1781E7EACF5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{107029AE-A51C-4D89-91AF-1781E7EACF5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{107029AE-A51C-4D89-91AF-1781E7EACF5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{107029AE-A51C-4D89-91AF-1781E7EACF5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
