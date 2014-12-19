@@ -4,9 +4,13 @@ Allows easy, fluent, building of datasets.
 Single fluent interface, only 4 methods
 
 AddDataTable - Create a new DataTable
+
 AddColumn - Add a column to the current DataTable
+
 AddRow - Add a row to the current DataTable
+
 Build - Generate and return the final DataSet
+
 
     var datasetBuilder =
                 new DataSetBuilder().AddDataTable("Users")
