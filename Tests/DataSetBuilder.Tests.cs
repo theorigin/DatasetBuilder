@@ -18,10 +18,12 @@
                     .AddColumn("Lastname")
                     .AddColumn("DateOfBirth", typeof(DateTime))
                     .AddColumn("IsActive", typeof(bool))
+                    .AddRow(1, "Andy", "Robinson", "1980-04-06", true)
                     .AddDataTable("Logins")
                     .AddColumn("Id", typeof(Guid))
                     .AddColumn("UserId", typeof(int))
-                    .AddColumn("LoginDate", typeof(DateTime));
+                    .AddColumn("LoginDate", typeof(DateTime))
+                    .AddRow("0C1E1152-7A47-4798-9A64-2900FEAC79B7", 1, "2014-12-19");
 
             var result = datasetBuilder.Build();
 
