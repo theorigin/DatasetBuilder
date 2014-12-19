@@ -8,7 +8,7 @@ Single fluent interface, only 4 methods
 - AddRow - Add a row to the current DataTable
 - Build - Generate and return the final DataSet
 
-    var datasetBuilder =
+    <pre>var datasetBuilder =
                 new DataSetBuilder().AddDataTable("Users")
                     .AddColumn("Id", typeof(int))
                     .AddColumn("Firstname")
@@ -22,4 +22,4 @@ Single fluent interface, only 4 methods
                     .AddColumn("LoginDate", typeof(DateTime))
                     .AddRow("0C1E1152-7A47-4798-9A64-2900FEAC79B7", 1, "2014-12-19");
         
-    var result = datasetBuilder.Build();
+    var result = datasetBuilder.Build();</pre>
