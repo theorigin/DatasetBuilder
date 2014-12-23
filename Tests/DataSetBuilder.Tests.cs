@@ -39,5 +39,59 @@
 
             Assert.IsInstanceOf<DataSet>(datasetBuilder.Build());
         }
+
+        [Test(Description = "Correct columns are created with correct data types")]
+        public void CorrectColumnsAreCreated()
+        {
+            var datasetBuilder = new DataSetBuilder();
+
+            var dataSet = datasetBuilder.AddDataTable("Users")
+                .AddColumn("Id", typeof(int))
+                .AddColumn("Firstname")
+                .AddColumn("Lastname")
+                .AddColumn("DateOfBirth", typeof(DateTime))
+                .AddColumn("IsActive", typeof(bool))
+                .Build();
+
+            Assert.That(dataSet.Tables.Count, Is.EqualTo(1));
+
+            var table = dataSet.Tables[0];
+            Assert.That(table.Columns.Count, Is.EqualTo(5));
+
+            Assert.That(table.Columns.Contains("Id"));
+            Assert.That(table.Columns.Contains("Firstname"));
+            Assert.That(table.Columns.Contains("Lastname"));
+            Assert.That(table.Columns.Contains("DateOfBirth"));
+            Assert.That(table.Columns.Contains("IsActive"));
+
+            Assert.That(table.Columns[0].DataType, Is.EqualTo(typeof(int)));
+            Assert.That(table.Columns[1].DataType, Is.EqualTo(typeof(string)));
+            Assert.That(table.Columns[2].DataType, Is.EqualTo(typeof(string)));
+            Assert.That(table.Columns[3].DataType, Is.EqualTo(typeof(DateTime)));
+            Assert.That(table.Columns[4].DataType, Is.EqualTo(typeof(bool)));
+        }
+
+
+        [Test(Description = "")]
+        public void CorrectColumnsWhenAddingMultiple()
+        {
+            var datasetBuilder = new DataSetBuilder();
+
+            var dataSet = datasetBuilder
+                .AddDataTable("Users")
+                .AddColumns(new Column { Name = "Id", Type = typeof(int) }, new Column { Name = "FirstName" })
+                .Build();
+
+            Assert.That(dataSet.Tables.Count, Is.EqualTo(1));
+
+            var table = dataSet.Tables[0];
+            Assert.That(table.Columns.Count, Is.EqualTo(2));
+
+            Assert.That(table.Columns.Contains("Id"));
+            Assert.That(table.Columns.Contains("Firstname"));
+
+            Assert.That(table.Columns[0].DataType, Is.EqualTo(typeof(int)));
+            Assert.That(table.Columns[1].DataType, Is.EqualTo(typeof(string)));
+        }
     }
 }

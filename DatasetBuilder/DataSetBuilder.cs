@@ -3,6 +3,18 @@
     using System;
     using System.Data;
 
+    public class Column
+    {
+        public Column()
+        {
+            Type = typeof(string);
+        }
+
+        public string Name { get; set; }
+
+        public Type Type { get; set; }
+    }
+
     public class DataSetBuilder
     {
         private readonly DataSet dataSet = new DataSet();
@@ -26,6 +38,17 @@
             var datatable = dataSet.Tables[dataSet.Tables.Count - 1];
 
             datatable.Columns.Add(new DataColumn(columnName, type));
+
+            return this;
+        }
+
+        public DataSetBuilder AddColumns(params Column[] columns)
+        {
+            var datatable = dataSet.Tables[dataSet.Tables.Count - 1];
+            foreach (var column in columns)
+            {
+                datatable.Columns.Add(new DataColumn(column.Name, column.Type));
+            }
 
             return this;
         }
