@@ -72,7 +72,7 @@
         }
 
 
-        [Test(Description = "")]
+        [Test(Description = "Correct columns added when using AddColumns method")]
         public void CorrectColumnsWhenAddingMultiple()
         {
             var datasetBuilder = new DataSetBuilder();
