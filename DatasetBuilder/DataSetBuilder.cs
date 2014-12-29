@@ -3,18 +3,6 @@
     using System;
     using System.Data;
 
-    public class Column
-    {
-        public Column()
-        {
-            Type = typeof(string);
-        }
-
-        public string Name { get; set; }
-
-        public Type Type { get; set; }
-    }
-
     public class DataSetBuilder
     {
         private readonly DataSet dataSet = new DataSet();
